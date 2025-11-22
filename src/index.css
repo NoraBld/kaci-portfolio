@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+/* ---------- animations électriques globales ---------- */
+@keyframes electric {
+  0%, 100% { color: #06b6d4; /* cyan */ text-shadow: 0 0 15px #06b6d4; }
+  25%      { color: #facc15; /* yellow */ text-shadow: 0 0 25px #facc15; }
+  50%      { color: #06b6d4; text-shadow: 0 0 20px #06b6d4; }
+  75%      { color: #facc15; text-shadow: 0 0 25px #facc15; }
+}
+
+/* élément ayant cette classe clignote en permanence (utilisé pour le logo) */
+.animate-electric {
+  animation: electric 1s infinite;
+}
+
+/* déclenche l'animation sur les éléments .electric quand on survole le parent .group */
+.group:hover .electric {
+  animation: electric 1s infinite;
+  /* augmenter le glow pendant le hover */
+  filter: drop-shadow(0 0 20px #06b6d4);
+}
