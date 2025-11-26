@@ -1,63 +1,176 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import profilePhoto from "../assets/portrait.jpg"; // Remplace par ta photo
+import profileImg from "../assets/KACI.jpg";
 
 export default function About() {
   return (
-    <div className="min-h-screen w-full font-sans relative" style={{ background: "#0b0b0b" }}>
-      {/* Navbar */}
+    <div className="about-page">
       <Navbar />
 
-      {/* Contenu principal */}
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between py-32 px-6 gap-12">
+      <div className="about-rectangle">
 
-        {/* Texte */}
-        <div className="md:w-1/2 text-white">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 electric-title">
-            À propos de moi
-          </h1>
-
-          <p className="text-lg leading-8 mb-4 opacity-90">
-            Je suis <span className="text-cyan-400 font-semibold">Kaci Belloul</span>, ingénieur en <span className="text-yellow-400 font-semibold">réseaux électriques</span>,
-            passionné par les systèmes intelligents et l’automatisation.
-          </p>
-
-          <p className="text-lg leading-8 mb-4 opacity-90">
-            Mon expertise couvre : conception de réseaux électriques, optimisation énergétique,
-            systèmes embarqués, analyse de données et développement web/mobile pour le contrôle et la supervision.
-          </p>
-
-          <p className="text-lg leading-8 mb-6 opacity-90">
-            Ce portfolio présente mon parcours, mes compétences et mes projets liés au domaine électrique et technologique.
-          </p>
-
-          <button className="bg-cyan-400 text-black font-bold px-6 py-3 rounded-lg shadow-lg hover:bg-yellow-400 transition-all">
-            Télécharger mon CV
-          </button>
+        {/* PHOTO AVEC HALO */}
+        <div className="about-photo-box animated-left">
+          <div className="photo-halo"></div>
+          <img src={profileImg} alt="Profil" />
         </div>
 
-        {/* Photo */}
-        <div className="md:w-1/2 flex justify-center md:justify-end">
-          <img 
-            src={profilePhoto} 
-            alt="Kaci Belloul" 
-            className="rounded-xl shadow-2xl w-72 md:w-96 object-cover"
-          />
+        {/* TEXTE */}
+        <div className="about-text-box animated-right">
+          <h1>À propos de moi</h1>
+          <p>
+            Je suis <span className="highlight">Kaci Belloul</span>, ingénieur spécialisé en <span className="highlight">réseaux électriques</span>.
+            Passionné par l’innovation, l’optimisation énergétique et les systèmes intelligents.
+          </p>
+          <button>Télécharger mon CV</button>
         </div>
 
       </div>
 
-      {/* Effet électrique sur le titre */}
       <style>{`
-        @keyframes electric {
-          0%, 100% { color: cyan; text-shadow: 0 0 8px cyan, 0 0 16px cyan; }
-          25% { color: yellow; text-shadow: 0 0 10px yellow, 0 0 20px yellow; }
-          50% { color: cyan; text-shadow: 0 0 8px cyan, 0 0 16px cyan; }
-          75% { color: yellow; text-shadow: 0 0 10px yellow, 0 0 20px yellow; }
+        /* PAGE */
+        .about-page {
+          min-height: 100vh;
+          background: #0B2A34; /* Bleu nuit sombre */
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          padding-top: 140px;
+          color: #F5F5F5; /* Blanc cassé */
+          font-family: 'Segoe UI', sans-serif;
         }
 
-        .electric-title {
-          animation: electric 1.5s infinite;
+        /* RECTANGLE PRINCIPAL */
+        .about-rectangle {
+          width: 85%;
+          max-width: 1300px;
+          height: 340px;
+          background: rgba(245,245,245,0.08); /* très léger blanc */
+          border-radius: 16px;
+          display: flex;
+          gap: 35px;
+          box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+          padding: 25px 30px;
+          overflow: hidden;
+        }
+
+        /* ANIMATIONS */
+        .animated-left {
+          animation: slideLeftZoom 1.2s ease-out forwards;
+        }
+        .animated-right {
+          animation: slideRightFade 1.3s ease-out forwards;
+          animation-delay: 0.25s;
+        }
+        @keyframes slideLeftZoom {
+          0% { transform: translateX(-80px) scale(0.95); opacity: 0; }
+          100% { transform: translateX(0) scale(1); opacity: 1; }
+        }
+        @keyframes slideRightFade {
+          0% { transform: translateX(50px); opacity: 0; }
+          100% { transform: translateX(0); opacity: 1; }
+        }
+
+        /* PHOTO + HALO */
+        .about-photo-box {
+          width: 32%;
+          height: 100%;
+          position: relative;
+          border-radius: 12px;
+          overflow: hidden;
+        }
+        .about-photo-box img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 12px;
+          position: relative;
+          z-index: 2;
+        }
+        .photo-halo {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 120%;
+          height: 120%;
+          background: radial-gradient(circle, rgba(0, 255, 255, 0.2) 0%, rgba(0, 255, 255, 0) 70%);
+          transform: translate(-50%, -50%);
+          border-radius: 50%;
+          filter: blur(25px);
+          z-index: 1;
+          animation: pulseHalo 2.5s infinite;
+        }
+        @keyframes pulseHalo {
+          0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+          50% { transform: translate(-50%, -50%) scale(1.05); opacity: 0.9; }
+        }
+
+        /* TEXTE */
+        .about-text-box {
+          width: 68%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding-right: 20px;
+        }
+        .about-text-box h1 {
+          font-size: 2rem;
+          color: #F5F5F5; /* Blanc cassé */
+          margin-bottom: 12px;
+          text-shadow: 0 0 6px rgba(245,245,245,0.4);
+        }
+        .about-text-box p {
+          font-size: 1.1rem;
+          line-height: 1.5;
+          color: #DADADA; /* Gris clair */
+          opacity: 0;
+          animation: fadeInText 1.5s ease forwards;
+          animation-delay: 0.5s;
+        }
+        @keyframes fadeInText {
+          0% { opacity: 0; }
+          100% { opacity: 1; }
+        }
+        .highlight {
+          color: #00FFFF; /* Cyan léger */
+          font-weight: 600;
+        }
+
+        /* BOUTON */
+        .about-text-box button {
+          margin-top: 22px;
+          width: 200px;
+          padding: 12px;
+          background: #00B3CC; /* Cyan sobre */
+          color: #0B2A34; /* texte sombre */
+          font-weight: 700;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          box-shadow: 0 6px 20px rgba(0, 179, 204, 0.4);
+          transition: all 0.3s ease;
+        }
+        .about-text-box button:hover {
+          background: #0099AA;
+          box-shadow: 0 8px 25px rgba(0, 153, 170, 0.5);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+          .about-rectangle {
+            flex-direction: column;
+            height: auto;
+          }
+          .about-photo-box {
+            width: 100%;
+            height: 240px;
+          }
+          .about-text-box {
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+          }
         }
       `}</style>
     </div>
