@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
-import profileImg from "../assets/KACI.jpg";
+import profileImg from "../assets/portrait.jpg";
 import { FaBolt, FaLaptopCode, FaTools, FaWindows, FaKeyboard } from "react-icons/fa";
 
 export default function About() {
@@ -41,12 +41,17 @@ export default function About() {
 
         <div className="about-text-box animated-right">
           <h1>À propos de moi</h1>
-          <p>
-            Je suis <span className="highlight">Kaci Belloul</span>, ingénieur spécialisé en{" "}
-            <span className="highlight">réseaux électriques</span>. Passionné par l’innovation, 
-            l’optimisation énergétique et les systèmes intelligents.
-          </p>
-          <button>Télécharger mon CV</button>
+          <p className="description">
+          Je suis <span className="highlight">Kaci Belloul</span>, Ingénieur en
+          électrotechnique – réseaux électriques, avec des expériences pratiques
+          chez <span className="highlight">SONATRACH</span> et{" "}
+          <span className="highlight">SONELGAZ</span> dans la maintenance, les
+          installations électriques et l’analyse technique. Passionné par les
+          <span className="highlight"> Smart Grids</span>, l’électronique de
+          puissance et la fiabilité des systèmes. Auteur d’un projet complet de
+          capteur cardiaque optique avec affichage numérique.
+        </p>
+          
         </div>
       </div>
 

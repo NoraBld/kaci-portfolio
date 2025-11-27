@@ -21,6 +21,7 @@ export default function Navbar() {
     { icon: FaTools, label: "Compétences", to: "/skills" },
     { icon: FaFolderOpen, label: "Projets", to: "/projects" },
     { icon: FaEnvelope, label: "Contact", to: "/contact" },
+    
   ];
 
   const toggleDarkMode = () => setDarkMode(!darkMode);
