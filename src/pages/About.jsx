@@ -112,7 +112,7 @@ export default function About() {
         .about-page { min-height: 100vh; background:#0B2A34; color:#F5F5F5; padding-top:140px; font-family:'Segoe UI', sans-serif; }
 
         /* ABOUT RECTANGLE */
-        .about-rectangle { width:85%; max-width:1300px; height:340px; background: rgba(245,245,245,0.08); border-radius:16px; display:flex; gap:35px; padding:25px 30px; margin:0 auto 80px auto; box-shadow:0 8px 40px rgba(0,0,0,0.3); overflow:hidden; }
+        .about-rectangle { width:85%; max-width:1300px; height:340px; background: #0B2832; border-radius:16px; display:flex; gap:35px; padding:25px 30px; margin:0 auto 80px auto; box-shadow:0 8px 40px rgba(0,0,0,0.3); overflow:hidden; }
         .animated-left { animation: slideLeftZoom 1.2s ease-out forwards; }
         .animated-right { animation: slideRightFade 1.3s ease-out forwards; animation-delay:0.25s; }
         @keyframes slideLeftZoom {0%{transform:translateX(-80px) scale(0.95);opacity:0;}100%{transform:translateX(0) scale(1);opacity:1;}}

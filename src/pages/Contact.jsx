@@ -47,7 +47,7 @@ export default function Contact() {
 
         {/* LinkedIn Box */}
         <div className="contact-box social-box">
-          <a href="https://www.linkedin.com/in/kaci-belloul" target="_blank" rel="noreferrer">
+          <a href="https://www.linkedin.com/in/kaci-belloul-08251a38a/" target="_blank" rel="noreferrer">
             <FaLinkedin size={28} />
             <span>LinkedIn</span>
           </a>

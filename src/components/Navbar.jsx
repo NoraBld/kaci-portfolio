@@ -9,7 +9,9 @@ import {
   FaBolt,
   FaBars,
   FaTimes,
+  FaGraduationCap,
 } from "react-icons/fa";
+
 
 export default function Navbar() {
   const [darkMode, setDarkMode] = useState(true);
@@ -18,7 +20,7 @@ export default function Navbar() {
   const links = [
     { icon: FaHome, label: "Accueil", to: "/" },
     { icon: FaUserAlt, label: "À propos", to: "/about" },
-    { icon: FaTools, label: "Compétences", to: "/skills" },
+    { icon: FaGraduationCap, label: "Education", to: "/education" },
     { icon: FaFolderOpen, label: "Projets", to: "/projects" },
     { icon: FaEnvelope, label: "Contact", to: "/contact" },
     
