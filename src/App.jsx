@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Education from "./pages/Education";
+import Projects from "./pages/Projects";
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />  {/* <== AJOUT */}
         <Route path="/education" element={<Education />} />
+        <Route path="/projects" element={<Projects />} />
       </Routes>
       
     </BrowserRouter>

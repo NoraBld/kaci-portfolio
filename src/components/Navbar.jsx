@@ -10,6 +10,7 @@ import {
   FaBars,
   FaTimes,
   FaGraduationCap,
+  FaBriefcase,
 } from "react-icons/fa";
 
 
@@ -21,7 +22,7 @@ export default function Navbar() {
     { icon: FaHome, label: "Accueil", to: "/" },
     { icon: FaUserAlt, label: "À propos", to: "/about" },
     { icon: FaGraduationCap, label: "Education", to: "/education" },
-    { icon: FaFolderOpen, label: "Projets", to: "/projects" },
+    { icon: FaBriefcase, label: "Stages & Projets", to: "/projects" },
     { icon: FaEnvelope, label: "Contact", to: "/contact" },
     
   ];

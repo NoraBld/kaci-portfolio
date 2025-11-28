@@ -1,91 +1,92 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import { FaGraduationCap } from "react-icons/fa";
+import { FaBriefcase, FaProjectDiagram } from "react-icons/fa";
+import stageLogo from "../assets/logo1.jpeg";
+import sonalogo from "../assets/logosona.png";
 import logoUniv from "../assets/logouniv.png";
 
+export default function Experience() {
+  const stages = [
+    {
+    title: "Stage du Master 2",
+    specialization: "Maintenance industrielle",
+    company: "SONATRACH Hossi Messaoud",
+    country: "Algérie",
+    period: "Décembre 2025 → Janvier 2026",
+    description: [
+      "Stage de 4 semaines chez l'entreprise nationale des Forages, filiale du groupe pétrolier SONATRACH.",
+      "Sujet : maintenance des équipements pétroliers.",
+      "Participation aux visites de maintenance préventive et rédaction de rapports d'interventions.",
+      "Consultations et choix des fournisseurs des équipements électriques (fiches techniques, livraisons, devis...).",
+      "Rédaction du rapport de stage."
+    ],
+    tags: ["Maintenance industrielle", "Équipements pétroliers", "Audit technique", "Fournisseurs"],
+    logo: sonalogo , // tu peux garder le même logo ou en mettre un spécifique
+    },
+    {
+    title: "Stage Technicien en électrotechnique industrielle",
+    specialization: "Électrotechnique industrielle",
+    company: "SONELGAZ Bejaia",
+    country: "Algérie",
+    period: "Juillet 2024 → Août 2024",
+    description: [
+      "Stage fin de Licence : 4 semaines dans le centre de production électrique SONELGAZ Amizour.",
+      "Réalisation des visites techniques sur terrain pour découvrir les installations.",
+      "Participation à la mise en service des nouvelles installations électriques.",
+      "Rédaction d'un rapport de stage pour la soutenance de fin de Licence."
+    ],
+    tags: ["Électrotechnique industrielle", "Visites techniques", "Mise en service", "Rapport de stage"],
+    logo: stageLogo,
+   },
+  ];
 
-export default function Education() {
-  const diplomas = [
-    {
-      title: "Master 2",
-      specialization: "Électrotechnique, option réseaux électriques",
-      university: "Université de Béjaïa",
-      country: "Algérie",
-      period: "2025 → 2026",
-      description: [
-        "Projets sur les réseaux électriques intelligents (Smart Grids).",
-        "Analyse et optimisation de systèmes de distribution électrique.",
-        "Simulation de systèmes d’électronique de puissance."
-      ],
-      tags: ["Électrotechnique de puissance avancée", "Smart Grids", "Réseaux de transport et de distribution","Maintenance industrielle"],
-      logo: logoUniv,
-    },
-    {
-      title: "Master 1",
-      specialization: "Electrotechnique",
-      university: "Université de Béjaïa",
-      country: "Algérie",
-      period: "2024 → 2025",
-      description: [
-        "Maintenance et installation de systèmes électriques.",
-        "Études de circuits et machines électriques.",
-        "Participation à des projets d’automatisation industrielle."
-      ],
-      tags: ["Machines électriques avancées", "énergies renouvelables", "Micro processeur", "Micro controleurs", "Informatique industrielle"],
-      logo: logoUniv,
-    },
-{
-  title: "Licence",
-  specialization: "Science et technologies, option Électrotechnique",
-  university: "Université de Béjaïa",
-  country: "Algérie",
-  period: "2021 → 2024",
-  description: [
-    "Acquisition des bases fondamentales en électrotechnique et électronique.",
-    "Travaux pratiques sur circuits électriques et machines électriques.",
-    "Initiation à l’automatisation et aux systèmes industriels.",
-    "Participation à de petits projets techniques et études de cas."
-  ],
-  tags: [
-    "Électrotechnique",
-    "Circuits électriques",
-    "Machines électriques",
-    "Automatisation industrielle",
-    "Électronique"
-  ],
-  logo: logoUniv,
-},
-  ]
+  const projects = [
+  {
+    title: "Projet Electronique : Capteur optique",
+    specialization: "Mesure des battements cardiaques",
+    company: "Laboratoire Electronique, Université de Béjaïa",
+    country: "Algérie",
+    period: "Avril 2023 → Juin 2023",
+    description: [
+      "Conception de circuits électroniques analogique et numérique.",
+      "Affichage de la fréquence cardiaque en temps réel sur un écran numérique à deux chiffres (0 à 99 bpm).",
+      "Tests et validation du système dans des conditions réelles."
+    ],
+    tags: ["Électronique analogique", "Électronique numérique", "Capteurs optiques", "Affichage numérique"],
+    logo: logoUniv ,
+  },
+
+];
+
 
   return (
     <div className="education-page">
       <Navbar />
-      <h1 className="education-title">
-        <FaGraduationCap className="icon-cap" /> Mon parcours éducatif
-      </h1>
 
+      {/* Section Stages */}
+      <h1 className="education-title">
+        <FaBriefcase className="icon-cap" /> Mes stages
+      </h1>
       <div className="education-container">
         <div className="timeline-line"></div>
-
-        {diplomas.map((d, index) => (
+        {stages.map((s, index) => (
           <div key={index} className="education-item">
             <div className="bubble">
-              <img src={d.logo} alt={d.university} />
+              <img src={s.logo} alt={s.company} />
             </div>
-
             <div className="description">
               <div className="title-period">
-                <h3>{d.title} – {d.specialization}</h3>
-                <span className="period-right">{d.period}</span>
+                <h3>{s.title} – {s.specialization}</h3>
+                <span className="period-right">{s.period}</span>
               </div>
-              <p className="university">{d.university}, {d.country}</p>
+              <p className="university">{s.company}, {s.country}</p>
               <ul>
-                {d.description.map((point, i) => (
+                {s.description.map((point, i) => (
                   <li key={i}>{point}</li>
                 ))}
               </ul>
               <div className="tags">
-                {d.tags.map((tag, i) => (
+                {s.tags.map((tag, i) => (
                   <span key={i} className="tag">{tag}</span>
                 ))}
               </div>
@@ -94,6 +95,39 @@ export default function Education() {
         ))}
       </div>
 
+      {/* Section Projets */}
+      <h1 className="education-title">
+        <FaProjectDiagram className="icon-cap" /> Mes projets
+      </h1>
+      <div className="education-container">
+        <div className="timeline-line"></div>
+        {projects.map((p, index) => (
+          <div key={index} className="education-item">
+            <div className="bubble">
+              <img src={p.logo} alt={p.company} />
+            </div>
+            <div className="description">
+              <div className="title-period">
+                <h3>{p.title} – {p.specialization}</h3>
+                <span className="period-right">{p.period}</span>
+              </div>
+              <p className="university">{p.company}, {p.country}</p>
+              <ul>
+                {p.description.map((point, i) => (
+                  <li key={i}>{point}</li>
+                ))}
+              </ul>
+              <div className="tags">
+                {p.tags.map((tag, i) => (
+                  <span key={i} className="tag">{tag}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* CSS identique à celui des diplômes */}
       <style>{`
         .education-page {
           min-height: 100vh;
@@ -296,4 +330,3 @@ export default function Education() {
     </div>
   );
 }
-
