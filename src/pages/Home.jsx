@@ -74,9 +74,7 @@ const Home = () => {
           {text2}
         </p>
 
-        {text2.length === fullText2.length && (
-          <button className="btn">Voir mes projets</button>
-        )}
+        
       </div>
 
       {/* CSS PUR : inchangé */}
@@ -119,22 +117,6 @@ const Home = () => {
           text-shadow: 0 0 6px rgba(0,0,0,0.5);
         }
         @media (min-width: 768px) { .subtitle { font-size: 1.5rem; } }
-
-        .btn {
-          background: #00ffff;
-          color: black;
-          font-weight: 700;
-          padding: 14px 28px;
-          border-radius: 10px;
-          border: none;
-          cursor: pointer;
-          box-shadow: 0 4px 12px rgba(0,255,255,0.3);
-          transition: background 0.3s ease, box-shadow 0.3s ease;
-        }
-        .btn:hover {
-          background: #00e5e5;
-          box-shadow: 0 6px 18px rgba(0,255,255,0.4);
-        }
 
         /* Animation électrique */
         @keyframes electric {
