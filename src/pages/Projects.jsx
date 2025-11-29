@@ -8,59 +8,57 @@ import logoUniv from "../assets/logouniv.png";
 export default function Experience() {
   const stages = [
     {
-    title: "Stage du Master 2",
-    specialization: "Maintenance industrielle",
-    company: "SONATRACH Hossi Messaoud",
-    country: "Algérie",
-    period: "Décembre 2025 → Janvier 2026",
-    description: [
-      "Stage de 4 semaines chez l'entreprise nationale des Forages, filiale du groupe pétrolier SONATRACH.",
-      "Sujet : maintenance des équipements pétroliers.",
-      "Participation aux visites de maintenance préventive et rédaction de rapports d'interventions.",
-      "Consultations et choix des fournisseurs des équipements électriques (fiches techniques, livraisons, devis...).",
-      "Rédaction du rapport de stage."
-    ],
-    tags: ["Maintenance industrielle", "Équipements pétroliers", "Audit technique", "Fournisseurs"],
-    logo: sonalogo , // tu peux garder le même logo ou en mettre un spécifique
+      title: "Stage du Master 2",
+      specialization: "Maintenance industrielle",
+      company: "SONATRACH Hossi Messaoud",
+      country: "Algérie",
+      period: "Décembre 2025 → Janvier 2026",
+      description: [
+        "Stage de 4 semaines chez l'entreprise nationale des Forages, filiale du groupe pétrolier SONATRACH.",
+        "Sujet : maintenance des équipements pétroliers.",
+        "Participation aux visites de maintenance préventive et rédaction de rapports d'interventions.",
+        "Consultations et choix des fournisseurs des équipements électriques (fiches techniques, livraisons, devis...).",
+        "Rédaction du rapport de stage."
+      ],
+      tags: ["Maintenance industrielle", "Équipements pétroliers", "Audit technique", "Fournisseurs"],
+      logo: sonalogo,
     },
     {
-    title: "Stage Technicien en électrotechnique industrielle",
-    specialization: "Électrotechnique industrielle",
-    company: "SONELGAZ Bejaia",
-    country: "Algérie",
-    period: "Juillet 2024 → Août 2024",
-    description: [
-      "Stage fin de Licence : 4 semaines dans le centre de production électrique SONELGAZ Amizour.",
-      "Réalisation des visites techniques sur terrain pour découvrir les installations.",
-      "Participation à la mise en service des nouvelles installations électriques.",
-      "Rédaction d'un rapport de stage pour la soutenance de fin de Licence."
-    ],
-    tags: ["Électrotechnique industrielle", "Visites techniques", "Mise en service", "Rapport de stage"],
-    logo: stageLogo,
-   },
+      title: "Stage Technicien en électrotechnique industrielle",
+      specialization: "Électrotechnique industrielle",
+      company: "SONELGAZ Bejaia",
+      country: "Algérie",
+      period: "Juillet 2024 → Août 2024",
+      description: [
+        "Stage fin de Licence : 4 semaines dans le centre de production électrique SONELGAZ Amizour.",
+        "Réalisation des visites techniques sur terrain pour découvrir les installations.",
+        "Participation à la mise en service des nouvelles installations électriques.",
+        "Rédaction d'un rapport de stage pour la soutenance de fin de Licence."
+      ],
+      tags: ["Électrotechnique industrielle", "Visites techniques", "Mise en service", "Rapport de stage"],
+      logo: stageLogo,
+    },
   ];
 
   const projects = [
-  {
-    title: "Projet Electronique : Capteur optique",
-    specialization: "Mesure des battements cardiaques",
-    company: "Laboratoire Electronique, Université de Béjaïa",
-    country: "Algérie",
-    period: "Avril 2023 → Juin 2023",
-    description: [
-      "Conception de circuits électroniques analogique et numérique.",
-      "Affichage de la fréquence cardiaque en temps réel sur un écran numérique à deux chiffres (0 à 99 bpm).",
-      "Tests et validation du système dans des conditions réelles."
-    ],
-    tags: ["Électronique analogique", "Électronique numérique", "Capteurs optiques", "Affichage numérique"],
-    logo: logoUniv ,
-  },
-
-];
-
+    {
+      title: "Projet Electronique : Capteur optique",
+      specialization: "Mesure des battements cardiaques",
+      company: "Laboratoire Electronique, Université de Béjaïa",
+      country: "Algérie",
+      period: "Avril 2023 → Juin 2023",
+      description: [
+        "Conception de circuits électroniques analogique et numérique.",
+        "Affichage de la fréquence cardiaque en temps réel sur un écran numérique à deux chiffres (0 à 99 bpm).",
+        "Tests et validation du système dans des conditions réelles."
+      ],
+      tags: ["Électronique analogique", "Électronique numérique", "Capteurs optiques", "Affichage numérique"],
+      logo: logoUniv,
+    },
+  ];
 
   return (
-    <div className="education-page">
+    <div className="experience-page">
       <Navbar />
 
       {/* Section Stages */}
@@ -127,11 +125,10 @@ export default function Experience() {
         ))}
       </div>
 
-      {/* CSS identique à celui des diplômes */}
       <style>{`
-        .education-page {
+        .experience-page {
           min-height: 100vh;
-          background: #0B2A34;
+          background: #001f3f;
           color: #F5F5F5;
           padding-top: 70px;
           font-family: 'Segoe UI', sans-serif;
@@ -139,20 +136,15 @@ export default function Experience() {
           flex-direction: column;
           align-items: center;
         }
-
         .education-title {
           font-size: 2.8rem;
-          color: cyan;
-          text-shadow: 0 0 14px cyan;
+          color: #1e90ff;
+          text-shadow: 0 0 14px #1e90ff;
           margin-bottom: 50px;
           display: flex;
           align-items: center;
         }
-
-        .icon-cap {
-          margin-right: 10px;
-        }
-
+        .icon-cap { margin-right: 10px; }
         .education-container {
           position: relative;
           display: flex;
@@ -161,170 +153,68 @@ export default function Experience() {
           max-width: 1200px;
           margin: 0 auto 50px auto;
         }
-
         .timeline-line {
           position: absolute;
           top: 50px;
           left: 60px;
           width: 5px;
           height: calc(100% - 50px);
-          background: cyan;
+          background: #1e90ff;
           z-index: 1;
           border-radius: 2px;
         }
-
-        .education-item {
-          display: flex;
-          align-items: flex-start;
-          margin-bottom: 80px;
-          position: relative;
-        }
-
+        .education-item { display: flex; align-items: flex-start; margin-bottom: 80px; position: relative; }
         .bubble {
           position: relative;
           width: 90px;
           height: 90px;
           border-radius: 50%;
-          background: rgba(0,255,255,0.1);
-          border: 3px solid cyan;
+          background: rgba(30,144,255,0.1);
+          border: 3px solid #1e90ff;
           display: flex;
           justify-content: center;
           align-items: center;
           z-index: 2;
           flex-shrink: 0;
         }
-
-        .bubble img {
-          width: 70px;
-          height: 70px;
-          border-radius: 50%;
-          z-index: 3;
-        }
-
+        .bubble img { width: 70px; height: 70px; border-radius: 50%; z-index: 3; }
         .bubble::before {
           content: '';
           position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: #0B2A34;
-          border-radius: 50%;
-          z-index: 2;
+          top: 0; left: 0;
+          width: 100%; height: 100%;
+          background: #001f3f; border-radius: 50%; z-index: 2;
         }
-
         .description {
           margin-left: 160px;
-          background: rgba(0,255,255,0.1);
+          background: rgba(30,144,255,0.1);
           padding: 30px 35px;
           border-radius: 14px;
           transition: transform 0.3s, box-shadow 0.3s;
           width: 80%;
         }
-
-        .description:hover {
-          transform: translateX(5px);
-          box-shadow: 0 10px 30px rgba(0,255,255,0.6);
-        }
-
-        .title-period {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          border-bottom: 1px solid rgba(255,255,255,0.2);
-          padding-bottom: 8px;
-          margin-bottom: 12px;
-        }
-
-        .description h3 {
-          font-size: 1.6rem;
-          margin: 0;
-        }
-
-        .period-right {
-          font-style: italic;
-          color: #aaa;
-          font-size: 0.95rem;
-        }
-
-        .description .university {
-          font-weight: bold;
-          color: cyan;
-          margin: 8px 0 12px 0;
-        }
-
-        .description ul {
-          padding-left: 25px;
-          margin-bottom: 12px;
-        }
-
-        .description li {
-          margin-bottom: 6px;
-          line-height: 1.6;
-        }
-
-        .tags {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 12px;
-        }
-
-        .tag {
-          background: cyan;
-          color: #0B2A34;
-          padding: 6px 14px;
-          border-radius: 6px;
-          font-size: 0.95rem;
-          font-weight: bold;
-        }
-
-        /* Responsive Tablette */
+        .description:hover { transform: translateX(5px); box-shadow: 0 10px 30px rgba(30,144,255,0.6); }
+        .title-period { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 8px; margin-bottom: 12px; }
+        .description h3 { font-size: 1.6rem; margin: 0; }
+        .period-right { font-style: italic; color: #aaa; font-size: 0.95rem; }
+        .description .university { font-weight: bold; color: #1e90ff; margin: 8px 0 12px 0; }
+        .description ul { padding-left: 25px; margin-bottom: 12px; }
+        .description li { margin-bottom: 6px; line-height: 1.6; }
+        .tags { display: flex; flex-wrap: wrap; gap: 12px; }
+        .tag { background: #1e90ff; color: #001f3f; padding: 6px 14px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; }
         @media (max-width: 1024px) {
-          .education-container {
-            width: 95%;
-          }
-          .description {
-            width: 100%;
-            margin-left: 0;
-          }
-          .education-item {
-            flex-direction: column;
-            margin-bottom: 60px;
-          }
-          .bubble {
-            margin-bottom: 20px;
-            align-self: flex-start;
-          }
-          .title-period {
-            flex-direction: column;
-            align-items: flex-start;
-            border-bottom: none;
-            margin-bottom: 8px;
-          }
-          .period-right {
-            margin-top: 5px;
-          }
+          .description { width: 100%; margin-left: 0; }
+          .education-item { flex-direction: column; margin-bottom: 60px; }
+          .bubble { margin-bottom: 20px; align-self: flex-start; }
+          .title-period { flex-direction: column; align-items: flex-start; border-bottom: none; margin-bottom: 8px; }
+          .period-right { margin-top: 5px; }
         }
-
-        /* Responsive Mobile */
         @media (max-width: 600px) {
-          .education-title {
-            font-size: 2.2rem;
-          }
-          .icon-cap {
-            font-size: 1.5rem;
-          }
-          .bubble {
-            width: 70px;
-            height: 70px;
-          }
-          .bubble img {
-            width: 50px;
-            height: 50px;
-          }
-          .description {
-            padding: 20px 25px;
-          }
+          .education-title { font-size: 2.2rem; }
+          .icon-cap { font-size: 1.5rem; }
+          .bubble { width: 70px; height: 70px; }
+          .bubble img { width: 50px; height: 50px; }
+          .description { padding: 20px 25px; }
         }
       `}</style>
     </div>

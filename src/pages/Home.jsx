@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import circuitGif from "../assets/circuit.gif";
+import circuitGif from "../assets/back.gif";
 import Navbar from "../components/Navbar";
 
 const Home = () => {
@@ -120,10 +120,10 @@ const Home = () => {
 
         /* Animation électrique */
         @keyframes electric {
-          0%, 100% { color: #00ffff; text-shadow: 0 0 8px #00ffff, 0 0 16px #00ffff; }
-          25% { color: #ffff00; text-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00; }
-          50% { color: #00ffff; text-shadow: 0 0 8px #00ffff, 0 0 16px #00ffff; }
-          75% { color: #ffff00; text-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00; }
+          0%, 100% { color: #0C2670; text-shadow: 0 0 8px #0C2670, 0 0 16px #0C2670; }
+          25% { color: #FFFFFF; text-shadow: 0 0 10px #FFFFFF, 0 0 20px #FFFFFF; }
+          50% { color: #0C2670 text-shadow: 0 0 8px #0C2670, 0 0 16px #0C2670; }
+          75% { color#FFFFFF; text-shadow: 0 0 10px #FFFFFF, 0 0 20px #FFFFFF; }
         }
 
         .electric {
