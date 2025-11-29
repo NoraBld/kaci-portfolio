@@ -109,6 +109,7 @@ export default function Education() {
           margin-bottom: 50px;
           display: flex;
           align-items: center;
+          text-align: center;
         }
         .icon-cap { margin-right: 10px; }
         .education-container {
@@ -192,19 +193,27 @@ export default function Education() {
         .description li { margin-bottom: 6px; line-height: 1.6; }
         .tags { display: flex; flex-wrap: wrap; gap: 12px; }
         .tag { background: #1e90ff; color: #001f3f; padding: 6px 14px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; }
+
+        /* Responsive tablette */
         @media (max-width: 1024px) {
-          .description { width: 100%; margin-left: 0; }
           .education-item { flex-direction: column; margin-bottom: 60px; }
+          .description { width: 100%; margin-left: 0; }
           .bubble { margin-bottom: 20px; align-self: flex-start; }
           .title-period { flex-direction: column; align-items: flex-start; border-bottom: none; margin-bottom: 8px; }
           .period-right { margin-top: 5px; }
+          .timeline-line { left: 40px; }
         }
+
+        /* Responsive mobile */
         @media (max-width: 600px) {
           .education-title { font-size: 2.2rem; }
           .icon-cap { font-size: 1.5rem; }
           .bubble { width: 70px; height: 70px; }
           .bubble img { width: 50px; height: 50px; }
           .description { padding: 20px 25px; }
+          .tags { gap: 8px; }
+          .tag { font-size: 0.85rem; padding: 5px 10px; }
+          .timeline-line { position: relative; left: 0; margin: 0 auto; width: 4px; height: 100%; }
         }
       `}</style>
     </div>

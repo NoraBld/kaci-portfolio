@@ -62,13 +62,13 @@ export default function Experience() {
       <Navbar />
 
       {/* Section Stages */}
-      <h1 className="education-title">
-        <FaBriefcase className="icon-cap" /> Mes stages
+      <h1 className="section-title">
+        <FaBriefcase className="icon" /> Mes stages
       </h1>
-      <div className="education-container">
+      <div className="timeline-container">
         <div className="timeline-line"></div>
         {stages.map((s, index) => (
-          <div key={index} className="education-item">
+          <div key={index} className="timeline-item">
             <div className="bubble">
               <img src={s.logo} alt={s.company} />
             </div>
@@ -77,30 +77,24 @@ export default function Experience() {
                 <h3>{s.title} – {s.specialization}</h3>
                 <span className="period-right">{s.period}</span>
               </div>
-              <p className="university">{s.company}, {s.country}</p>
+              <p className="company">{s.company}, {s.country}</p>
               <ul>
-                {s.description.map((point, i) => (
-                  <li key={i}>{point}</li>
-                ))}
+                {s.description.map((point, i) => <li key={i}>{point}</li>)}
               </ul>
-              <div className="tags">
-                {s.tags.map((tag, i) => (
-                  <span key={i} className="tag">{tag}</span>
-                ))}
-              </div>
+              <div className="tags">{s.tags.map((tag, i) => <span key={i} className="tag">{tag}</span>)}</div>
             </div>
           </div>
         ))}
       </div>
 
       {/* Section Projets */}
-      <h1 className="education-title">
-        <FaProjectDiagram className="icon-cap" /> Mes projets
+      <h1 className="section-title">
+        <FaProjectDiagram className="icon" /> Mes projets
       </h1>
-      <div className="education-container">
+      <div className="timeline-container">
         <div className="timeline-line"></div>
         {projects.map((p, index) => (
-          <div key={index} className="education-item">
+          <div key={index} className="timeline-item">
             <div className="bubble">
               <img src={p.logo} alt={p.company} />
             </div>
@@ -109,17 +103,11 @@ export default function Experience() {
                 <h3>{p.title} – {p.specialization}</h3>
                 <span className="period-right">{p.period}</span>
               </div>
-              <p className="university">{p.company}, {p.country}</p>
+              <p className="company">{p.company}, {p.country}</p>
               <ul>
-                {p.description.map((point, i) => (
-                  <li key={i}>{point}</li>
-                ))}
+                {p.description.map((point, i) => <li key={i}>{point}</li>)}
               </ul>
-              <div className="tags">
-                {p.tags.map((tag, i) => (
-                  <span key={i} className="tag">{tag}</span>
-                ))}
-              </div>
+              <div className="tags">{p.tags.map((tag, i) => <span key={i} className="tag">{tag}</span>)}</div>
             </div>
           </div>
         ))}
@@ -136,7 +124,7 @@ export default function Experience() {
           flex-direction: column;
           align-items: center;
         }
-        .education-title {
+        .section-title {
           font-size: 2.8rem;
           color: #1e90ff;
           text-shadow: 0 0 14px #1e90ff;
@@ -144,8 +132,8 @@ export default function Experience() {
           display: flex;
           align-items: center;
         }
-        .icon-cap { margin-right: 10px; }
-        .education-container {
+        .icon { margin-right: 10px; }
+        .timeline-container {
           position: relative;
           display: flex;
           flex-direction: column;
@@ -163,7 +151,12 @@ export default function Experience() {
           z-index: 1;
           border-radius: 2px;
         }
-        .education-item { display: flex; align-items: flex-start; margin-bottom: 80px; position: relative; }
+        .timeline-item {
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 80px;
+          position: relative;
+        }
         .bubble {
           position: relative;
           width: 90px;
@@ -177,11 +170,17 @@ export default function Experience() {
           z-index: 2;
           flex-shrink: 0;
         }
-        .bubble img { width: 70px; height: 70px; border-radius: 50%; z-index: 3; }
+        .bubble img {
+          width: 70px;
+          height: 70px;
+          border-radius: 50%;
+          z-index: 3;
+        }
         .bubble::before {
           content: '';
           position: absolute;
-          top: 0; left: 0;
+          top: 0;
+          left: 0;
           width: 100%; height: 100%;
           background: #001f3f; border-radius: 50%; z-index: 2;
         }
@@ -197,24 +196,32 @@ export default function Experience() {
         .title-period { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 8px; margin-bottom: 12px; }
         .description h3 { font-size: 1.6rem; margin: 0; }
         .period-right { font-style: italic; color: #aaa; font-size: 0.95rem; }
-        .description .university { font-weight: bold; color: #1e90ff; margin: 8px 0 12px 0; }
+        .company { font-weight: bold; color: #1e90ff; margin: 8px 0 12px 0; }
         .description ul { padding-left: 25px; margin-bottom: 12px; }
         .description li { margin-bottom: 6px; line-height: 1.6; }
         .tags { display: flex; flex-wrap: wrap; gap: 12px; }
         .tag { background: #1e90ff; color: #001f3f; padding: 6px 14px; border-radius: 6px; font-size: 0.95rem; font-weight: bold; }
+
+        /* Tablette */
         @media (max-width: 1024px) {
+          .timeline-item { flex-direction: column; margin-bottom: 60px; }
           .description { width: 100%; margin-left: 0; }
-          .education-item { flex-direction: column; margin-bottom: 60px; }
           .bubble { margin-bottom: 20px; align-self: flex-start; }
           .title-period { flex-direction: column; align-items: flex-start; border-bottom: none; margin-bottom: 8px; }
           .period-right { margin-top: 5px; }
+          .timeline-line { left: 40px; }
         }
+
+        /* Mobile */
         @media (max-width: 600px) {
-          .education-title { font-size: 2.2rem; }
-          .icon-cap { font-size: 1.5rem; }
+          .section-title { font-size: 2.2rem; }
+          .icon { font-size: 1.5rem; }
           .bubble { width: 70px; height: 70px; }
           .bubble img { width: 50px; height: 50px; }
           .description { padding: 20px 25px; }
+          .tags { gap: 8px; }
+          .tag { font-size: 0.85rem; padding: 5px 10px; }
+          .timeline-line { position: relative; left: 0; margin: 0 auto; width: 4px; height: 100%; }
         }
       `}</style>
     </div>
