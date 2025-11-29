@@ -57,61 +57,42 @@ export default function Experience() {
     },
   ];
 
+  const renderTimeline = (items) => (
+    <div className="timeline-container">
+      {items.map((item, index) => (
+        <div key={index} className="timeline-item">
+          <div className="logo-inside">
+            <img src={item.logo} alt={item.company || item.university} />
+          </div>
+          <div className="description">
+            <div className="title-period">
+              <h3>{item.title} – {item.specialization}</h3>
+              <span className="period-right">{item.period}</span>
+            </div>
+            <p className="company">{item.company || `${item.university}, ${item.country}`}</p>
+            <ul>
+              {item.description.map((point, i) => <li key={i}>{point}</li>)}
+            </ul>
+            <div className="tags">{item.tags.map((tag, i) => <span key={i} className="tag">{tag}</span>)}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+
   return (
     <div className="experience-page">
       <Navbar />
 
-      {/* Section Stages */}
       <h1 className="section-title">
         <FaBriefcase className="icon" /> Mes stages
       </h1>
-      <div className="timeline-container">
-        <div className="timeline-line"></div>
-        {stages.map((s, index) => (
-          <div key={index} className="timeline-item">
-            <div className="bubble">
-              <img src={s.logo} alt={s.company} />
-            </div>
-            <div className="description">
-              <div className="title-period">
-                <h3>{s.title} – {s.specialization}</h3>
-                <span className="period-right">{s.period}</span>
-              </div>
-              <p className="company">{s.company}, {s.country}</p>
-              <ul>
-                {s.description.map((point, i) => <li key={i}>{point}</li>)}
-              </ul>
-              <div className="tags">{s.tags.map((tag, i) => <span key={i} className="tag">{tag}</span>)}</div>
-            </div>
-          </div>
-        ))}
-      </div>
+      {renderTimeline(stages)}
 
-      {/* Section Projets */}
       <h1 className="section-title">
         <FaProjectDiagram className="icon" /> Mes projets
       </h1>
-      <div className="timeline-container">
-        <div className="timeline-line"></div>
-        {projects.map((p, index) => (
-          <div key={index} className="timeline-item">
-            <div className="bubble">
-              <img src={p.logo} alt={p.company} />
-            </div>
-            <div className="description">
-              <div className="title-period">
-                <h3>{p.title} – {p.specialization}</h3>
-                <span className="period-right">{p.period}</span>
-              </div>
-              <p className="company">{p.company}, {p.country}</p>
-              <ul>
-                {p.description.map((point, i) => <li key={i}>{point}</li>)}
-              </ul>
-              <div className="tags">{p.tags.map((tag, i) => <span key={i} className="tag">{tag}</span>)}</div>
-            </div>
-          </div>
-        ))}
-      </div>
+      {renderTimeline(projects)}
 
       <style>{`
         .experience-page {
@@ -133,67 +114,58 @@ export default function Experience() {
           align-items: center;
         }
         .icon { margin-right: 10px; }
+
         .timeline-container {
-          position: relative;
           display: flex;
           flex-direction: column;
           width: 95%;
           max-width: 1200px;
-          margin: 0 auto 50px auto;
+          margin-bottom: 50px;
         }
-        .timeline-line {
-          position: absolute;
-          top: 50px;
-          left: 60px;
-          width: 5px;
-          height: calc(100% - 50px);
-          background: #1e90ff;
-          z-index: 1;
-          border-radius: 2px;
-        }
+
         .timeline-item {
           display: flex;
           align-items: flex-start;
-          margin-bottom: 80px;
-          position: relative;
+          margin-bottom: 50px;
         }
-        .bubble {
-          position: relative;
-          width: 90px;
-          height: 90px;
-          border-radius: 50%;
-          background: rgba(30,144,255,0.1);
-          border: 3px solid #1e90ff;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          z-index: 2;
-          flex-shrink: 0;
-        }
-        .bubble img {
+
+        .logo-inside {
           width: 70px;
           height: 70px;
+          margin-right: 25px;
+          flex-shrink: 0;
+        }
+
+        .logo-inside img {
+          width: 100%;
+          height: 100%;
           border-radius: 50%;
-          z-index: 3;
+          border: 3px solid #1e90ff;
         }
-        .bubble::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%; height: 100%;
-          background: #001f3f; border-radius: 50%; z-index: 2;
-        }
+
         .description {
-          margin-left: 160px;
           background: rgba(30,144,255,0.1);
-          padding: 30px 35px;
+          padding: 25px 30px;
           border-radius: 14px;
           transition: transform 0.3s, box-shadow 0.3s;
-          width: 80%;
+          flex: 1;
         }
-        .description:hover { transform: translateX(5px); box-shadow: 0 10px 30px rgba(30,144,255,0.6); }
-        .title-period { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 8px; margin-bottom: 12px; }
+
+        .description:hover {
+          transform: translateX(5px);
+          box-shadow: 0 10px 30px rgba(30,144,255,0.6);
+        }
+
+        .title-period {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-bottom: 1px solid rgba(255,255,255,0.2);
+          padding-bottom: 8px;
+          margin-bottom: 12px;
+          flex-wrap: wrap;
+        }
+
         .description h3 { font-size: 1.6rem; margin: 0; }
         .period-right { font-style: italic; color: #aaa; font-size: 0.95rem; }
         .company { font-weight: bold; color: #1e90ff; margin: 8px 0 12px 0; }
@@ -204,24 +176,22 @@ export default function Experience() {
 
         /* Tablette */
         @media (max-width: 1024px) {
-          .timeline-item { flex-direction: column; margin-bottom: 60px; }
-          .description { width: 100%; margin-left: 0; }
-          .bubble { margin-bottom: 20px; align-self: flex-start; }
+          .logo-inside { width: 60px; height: 60px; margin-right: 20px; }
+          .description { padding: 20px 25px; }
           .title-period { flex-direction: column; align-items: flex-start; border-bottom: none; margin-bottom: 8px; }
           .period-right { margin-top: 5px; }
-          .timeline-line { left: 40px; }
         }
 
         /* Mobile */
         @media (max-width: 600px) {
-          .section-title { font-size: 2.2rem; }
-          .icon { font-size: 1.5rem; }
-          .bubble { width: 70px; height: 70px; }
-          .bubble img { width: 50px; height: 50px; }
-          .description { padding: 20px 25px; }
+          .section-title { font-size: 2.4rem; }
+          .icon { font-size: 3rem; margin-right: 10px; }
+          .logo-inside { width: 50px; height: 50px; margin-right: 15px; }
+          .description { padding: 15px 20px; }
+          .description h3 { font-size: 1.3rem; }
+          .description ul { padding-left: 20px; }
           .tags { gap: 8px; }
           .tag { font-size: 0.85rem; padding: 5px 10px; }
-          .timeline-line { position: relative; left: 0; margin: 0 auto; width: 4px; height: 100%; }
         }
       `}</style>
     </div>
