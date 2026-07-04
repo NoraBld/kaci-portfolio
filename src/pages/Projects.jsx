@@ -4,6 +4,7 @@ import { FaBriefcase, FaProjectDiagram } from "react-icons/fa";
 import stageLogo from "../assets/logo1.jpeg";
 import sonalogo from "../assets/logosona.png";
 import logoUniv from "../assets/logouniv.png";
+import logoSpe from "../assets/logospe.png";
 
 export default function Experience() {
   const stages = [
@@ -22,6 +23,21 @@ export default function Experience() {
       ],
       tags: ["Maintenance industrielle", "Équipements pétroliers", "Audit technique", "Fournisseurs"],
       logo: sonalogo,
+    },
+
+
+
+    {
+      title: "Stage du Master 2",
+      specialization: "Maintenance industrielle",
+      company: "SPE (SONELGAZ Algerian Power Company)",
+      country: "Algérie",
+      period: "Mai 2026 → Juin 2026",
+      description: [
+       
+      ],
+      tags: ["Maintenance industrielle", "Équipements pétroliers", "Audit technique", "Fournisseurs"],
+      logo: logoSpe,
     },
     {
       title: "Stage Technicien en électrotechnique industrielle",
@@ -55,6 +71,34 @@ export default function Experience() {
       tags: ["Électronique analogique", "Électronique numérique", "Capteurs optiques", "Affichage numérique"],
       logo: logoUniv,
     },
+    {
+  title: "Mémoire de fin d'étude ",
+  specialization:
+    "Modélisation, Commande et Gestion Énergétique d’un Véhicule Électrique à Pile à Combustible de type PEM",
+  company: "Université de Béjaïa",
+  country: "Algérie",
+  period: "Février 2026 → Juin 2026",
+  description: [
+    "Étude approfondie des architectures et des technologies des véhicules électriques.",
+    "Modélisation mathématique d'une pile à combustible PEM (PEMFC) sous MATLAB/Simulink.",
+    "Conception et simulation d'un système hybride composé d'une pile à combustible, d'une batterie, d'un supercondensateur et d'une machine synchrone à aimants permanents.",
+    "Développement d'une stratégie de gestion énergétique afin d'optimiser la répartition de puissance entre les différentes sources d'énergie.",
+    "Analyse et validation des résultats de simulation en modes traction, freinage et arrêt."
+  ],
+  tags: [
+    "MATLAB",
+    "Simulink",
+    "PEM Fuel Cell",
+    "Electric Vehicle",
+    "Energy Management",
+    "DC-DC Converter",
+    "Battery",
+    "Supercapacitor",
+    "PMSM",
+    "Modeling & Simulation"
+  ],
+  logo: logoUniv,
+},
   ];
 
   const renderTimeline = (items) => (
