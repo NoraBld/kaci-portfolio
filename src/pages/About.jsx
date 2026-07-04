@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
-import profileImg from "../assets/KACI.jpg";
+import profileImg from "../assets/kacibl.jpg";
 import { FaBolt, FaLaptopCode, FaTools, FaWindows, FaKeyboard } from "react-icons/fa";
 
 export default function About() {
