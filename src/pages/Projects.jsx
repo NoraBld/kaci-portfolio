@@ -11,7 +11,7 @@ export default function Experience() {
     {
       title: "Stage du Master 2",
       specialization: "Maintenance industrielle",
-      company: "SONATRACH Hossi Messaoud",
+      company: "SONATRACH Hassi Messaoud",
       country: "Algérie",
       period: "Décembre 2025 → Janvier 2026",
       description: [
