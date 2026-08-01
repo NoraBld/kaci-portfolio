@@ -41,7 +41,7 @@ export default function About() {
 
         <div className="about-text-box animated-right">
           <h1>À propos de moi</h1>
-          <p className="description">
+          {/* <p className="description">
             Je suis <span className="highlight">Kaci Belloul</span>, Ingénieur en
             électrotechnique – réseaux électriques, avec des expériences pratiques
             chez <span className="highlight">SONATRACH</span> et{" "}
@@ -50,7 +50,21 @@ export default function About() {
             <span className="highlight"> Smart Grids</span>, l’électronique de
             puissance et la fiabilité des systèmes. Auteur d’un projet complet de
             capteur cardiaque optique avec affichage numérique.
+          </p> */}
+        
+         <p className="description">
+          Je suis <span className="highlight">Kaci Belloul</span>, ingénieur en électrotechnique 
+          spécialisé en <span className="highlight">réseaux électriques</span>. J'ai acquis une 
+          expérience pratique chez <span className="highlight">SONATRACH</span>,
+          <span className="highlight">SONELGAZ</span> et <span className="highlight">SONELGAZ 
+          Algerian Power Company (APC)</span> dans la maintenance, les installations électriques 
+          et l'analyse technique. Titulaire d'une attestation en <span className="highlight">montage 
+          et câblage électrique</span>, je suis passionné par les <span className="highlight">Smart 
+          Grids</span>, l'électronique de puissance et les énergies renouvelables. Curieux et motivé,
+          j'aime concevoir des solutions innovantes et relever de nouveaux défis techniques.
           </p>
+
+
         </div>
       </div>
 

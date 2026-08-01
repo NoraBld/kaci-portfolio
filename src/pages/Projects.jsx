@@ -27,18 +27,31 @@ export default function Experience() {
 
 
 
-    {
-      title: "Stage du Master 2",
-      specialization: "Maintenance industrielle",
-      company: "SPE (SONELGAZ Algerian Power Company)",
-      country: "Algérie",
-      period: "Mai 2026 → Juin 2026",
-      description: [
-       
-      ],
-      tags: ["Maintenance industrielle", "Équipements pétroliers", "Audit technique", "Fournisseurs"],
-      logo: logoSpe,
-    },
+{
+  title: "Stage pratique",
+  specialization: "Maintenance des installations électriques",
+  company: "SPE (SONELGAZ Algerian Power Company)",
+  country: "Algérie, Centrale électrique d'Amizour",
+  period: "Mai 2026 → Juin 2026",
+  description: [
+    "Découverte du fonctionnement et de l'organisation d'une centrale électrique.",
+    "Participation aux opérations de maintenance préventive et corrective des équipements électriques.",
+    "Observation du fonctionnement des transformateurs de puissance, des cellules HT/MT et des systèmes de protection.",
+    "Familiarisation avec les procédures de sécurité et les normes d'exploitation des installations électriques.",
+    "Analyse des différents équipements de production et de distribution de l'énergie électrique."
+  ],
+  tags: [
+    "Centrale électrique",
+    "Maintenance électrique",
+    "Transformateurs",
+    "Cellules HT/MT",
+    "Systèmes de protection",
+    "Production d'énergie",
+    "Distribution électrique",
+    "Sécurité industrielle"
+  ],
+  logo: logoSpe,
+},
     {
       title: "Stage Technicien en électrotechnique industrielle",
       specialization: "Électrotechnique industrielle",
