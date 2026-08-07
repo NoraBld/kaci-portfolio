@@ -9,13 +9,13 @@ import logoSpe from "../assets/logospe.png";
 export default function Experience() {
   const stages = [
     {
-      title: "Stage du Master 2",
+      title: "Stage ",
       specialization: "Maintenance industrielle",
-      company: "SONATRACH Hassi Messaoud",
-      country: "Algérie",
+      company: "ENAFOR (filiale de SONATRACH) – Hassi Messaoud",
+  
       period: "Décembre 2025 → Janvier 2026",
       description: [
-        "Stage de 4 semaines chez l'entreprise nationale des Forages, filiale du groupe pétrolier SONATRACH.",
+        "Stage de 2 semaines chez l'entreprise nationale des Forages, filiale du groupe pétrolier SONATRACH.",
         "Sujet : maintenance des équipements pétroliers.",
         "Participation aux visites de maintenance préventive et rédaction de rapports d'interventions.",
         "Consultations et choix des fournisseurs des équipements électriques (fiches techniques, livraisons, devis...).",
@@ -29,11 +29,12 @@ export default function Experience() {
 
 {
   title: "Stage pratique",
-  specialization: "Maintenance des installations électriques",
-  company: "SPE (SONELGAZ Algerian Power Company)",
-  country: "Algérie, Centrale électrique d'Amizour",
-  period: "Mai 2026 → Juin 2026",
+  specialization: "Master 2",
+  company: "SPE (Société Algérienne de Production de l'Électricité) – Centrale électrique d'Amizour, Béjaïa",
+  period: "Avril 2026 → Juin 2026",
   description: [
+    "Stage pratique de 2 mois à la centrale électrique d'Amizour de SPE (SONELGAZ Algerian Power Company).",
+   
     "Découverte du fonctionnement et de l'organisation d'une centrale électrique.",
     "Participation aux opérations de maintenance préventive et corrective des équipements électriques.",
     "Observation du fonctionnement des transformateurs de puissance, des cellules HT/MT et des systèmes de protection.",

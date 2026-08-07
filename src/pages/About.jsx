@@ -22,10 +22,15 @@ export default function About() {
 
   const atouts = ["Autonome", "Curieux", "Ambitieux", "Capacité de travailler en équipe"];
 
-  const centres = [
-    { nom: "Sports cyclistes Club VCB Béjaia", icon: "🚴" },
-    { nom: "Randonnée", icon: "🥾" },
-    { nom: "Voyage", icon: "✈️" },
+ 
+
+ const centres = [
+  { nom: "Musculation", icon: "🏋️" },
+  { nom: "Football", icon: "⚽" },
+  { nom: "Sports cyclistes (VCB Béjaïa)", icon: "🚴" },
+  { nom: "Randonnée", icon: "🥾" },
+  { nom: "Voyage", icon: "✈️" },
+
   ];
 
   return (
@@ -55,11 +60,13 @@ export default function About() {
          <p className="description">
           Je suis <span className="highlight">Kaci Belloul</span>, ingénieur en électrotechnique 
           spécialisé en <span className="highlight">réseaux électriques</span>. J'ai acquis une 
-          expérience pratique chez <span className="highlight">SONATRACH</span>,
-          <span className="highlight">SONELGAZ</span> et <span className="highlight">SONELGAZ 
+          expérience pratique chez <span className="highlight">ENAFOR (filiale de SONATRACH)</span>,
+          <span className="highlight"> SONELGAZ</span> et <span className="highlight">SONELGAZ 
           Algerian Power Company (APC)</span> dans la maintenance, les installations électriques 
-          et l'analyse technique. Titulaire d'une attestation en <span className="highlight">montage 
-          et câblage électrique</span>, je suis passionné par les <span className="highlight">Smart 
+          et l'analyse technique. 
+          <br></br>
+          Titulaire d'une attestation de qualification professionnelle en 
+          <span className="highlight"> montage et câblage électrique</span>, je suis passionné par les <span className="highlight">Smart 
           Grids</span>, l'électronique de puissance et les énergies renouvelables. Curieux et motivé,
           j'aime concevoir des solutions innovantes et relever de nouveaux défis techniques.
           </p>
@@ -164,7 +171,8 @@ export default function About() {
         .about-rectangle { 
           width:85%; 
           max-width:1300px; 
-          height:340px; 
+          min-height:340px;
+          height:auto;
           background: #00264d; /* Bleu plus clair */ 
           border-radius:16px; 
           display:flex; 
@@ -172,7 +180,7 @@ export default function About() {
           padding:25px 30px; 
           margin:0 auto 80px auto; 
           box-shadow:0 8px 40px rgba(0,0,0,0.3); 
-          overflow:hidden; 
+         
         }
 
         .animated-left { animation: slideLeftZoom 1.2s ease-out forwards; }
@@ -180,12 +188,18 @@ export default function About() {
         @keyframes slideLeftZoom {0%{transform:translateX(-80px) scale(0.95);opacity:0;}100%{transform:translateX(0) scale(1);opacity:1;}}
         @keyframes slideRightFade {0%{transform:translateX(50px);opacity:0;}100%{transform:translateX(0);opacity:1;}}
 
-        .about-photo-box { width:32%; height:100%; position:relative; border-radius:12px; overflow:hidden; }
-        .about-photo-box img { width:100%; height:100%; object-fit:cover; border-radius:12px; }
+      .about-photo-box{
+    flex:1;
+    max-width:350px;
+    min-width:250px;
+    border-radius:12px;
+    overflow:hidden;
+}
+     .about-photo-box img { width:100%; height:100%; object-fit:cover; border-radius:12px; }
         .photo-halo { position:absolute; top:50%; left:50%; width:120%; height:120%; background:radial-gradient(circle, rgba(30,144,255,0.2),transparent 70%); transform:translate(-50%, -50%); border-radius:50%; filter:blur(25px); z-index:1; animation:pulseHalo 2.5s infinite; }
         @keyframes pulseHalo {0%,100%{transform:translate(-50%, -50%) scale(1);opacity:0.6;}50%{transform:translate(-50%, -50%) scale(1.05);opacity:0.9;}}
 
-        .about-text-box { width:68%; display:flex; flex-direction:column; justify-content:center; padding-right:20px; }
+        .about-text-box {   flex:2; display:flex; flex-direction:column; justify-content:center; padding-right:20px; }
         .about-text-box h1 { font-size:2rem; margin-bottom:12px; text-shadow:0 0 6px rgba(30,144,255,0.6); }
         .about-text-box p { font-size:1.1rem; line-height:1.5; color:#DADADA; }
         .highlight { color:#1e90ff; font-weight:600; }
@@ -196,7 +210,15 @@ export default function About() {
         .circle { width:130px; height:130px; border-radius:50%; background: linear-gradient(145deg, rgba(30,144,255,0.12), rgba(30,144,255,0.2)); border:2px solid #1e90ff; display:flex; flex-direction:column; justify-content:center; align-items:center; cursor:pointer; transition:0.3s; text-align:center; color:white; font-weight:500; }
         .circle:hover { transform:scale(1.08); }
         .circle.active { background:#1e90ff; color:#001f3f; }
-        .skills-content { width:70%; background: rgba(30,144,255,0.08); padding:25px; border-radius:12px; margin:auto; }
+        .skills-content {
+          width:90%;
+    max-width:900px;
+    
+         background: rgba(30,144,255,0.08);
+          padding:25px; 
+          border-radius:12px;
+           margin:auto; 
+        }
         .skills-content h3 { color:#1e90ff; font-size:1.8rem; margin-bottom:15px; }
         .skills-content li { margin-bottom:10px; border-left:3px solid #1e90ff; padding-left:10px; }
 
@@ -216,7 +238,59 @@ export default function About() {
         .centre-nom { font-weight:600; color:white; }
 
         @media(max-width:1024px){ .about-rectangle{gap:25px; padding:20px; height:auto;} .about-text-box{text-align:center; padding-right:0;} .skills-circles-row{gap:20px;} }
-        @media(max-width:768px){ .about-rectangle{flex-direction:column;height:auto;} .about-photo-box{width:100%;height:280px;} .skills-content{width:100%;} .langues-list,.atouts-list,.centres-list{flex-direction:column; align-items:center;} .centre-card-pro{width:90%;} }
+        @media(max-width:768px)
+        { @media (max-width:768px){
+
+.about-rectangle{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.about-photo-box{
+    width:220px;
+    height:220px;
+    max-width:220px;
+}
+
+.about-photo-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.about-text-box{
+    width:100%;
+    padding:0;
+}
+
+.about-text-box h1{
+    font-size:1.8rem;
+}
+
+.about-text-box p{
+    font-size:1rem;
+    line-height:1.7;
+}
+
+}
+         .skills-content{width:100%;} 
+         .circle{
+    width:100px;
+    height:100px;
+    font-size:0.9rem;
+    align-items:center;
+}
+
+.skills-circles-row{
+    gap:15px;
+    align-items:center;
+}
+         .langues-list,.atouts-list,
+         .centres-list{flex-direction:column; align-items:center;} 
+         .centre-card-pro{width:90%;} 
+         }
         @media(max-width:480px){ .skills-circles-row{flex-direction:column; gap:20px;} .circle{width:100px;height:100px;} .skills-content{width:95%; padding:15px;} .about-text-box h1{font-size:1.5rem;} .about-text-box p{font-size:1rem;} }
       `}</style>
     </div>

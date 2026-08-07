@@ -8,9 +8,10 @@ export default function Formation() {
     title: "Certificat de qualification professionnelle",
    
     qualification: "Montage et câblage électrique",
-    country: "Algérie , Béjaia CFPA Younes Lakhal",
+    company: "Algérie , Béjaia CFPA Younes Lakhal",
     period: "2026/02/22 → 2026/05/21",
     description: [
+      "Formation professionnelle de 3 mois en montage et câblage électrique.",
       "Réalisation de montages et de câblages électriques.",
       "Lecture et interprétation des schémas électriques.",
       "Installation, raccordement et mise en service d'équipements électriques.",
@@ -53,8 +54,8 @@ export default function Formation() {
         </div>
 
         <p className="company">
-          {f.specialization}
-        </p>
+  {f.company}
+</p>
 
         <p className="qualification">
           <strong>Qualification :</strong> {f.qualification}

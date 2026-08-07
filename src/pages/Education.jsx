@@ -5,20 +5,27 @@ import logoUniv from "../assets/logouniv.png";
 
 export default function Education() {
   const diplomas = [
-    {
-      title: "Master 2",
-      specialization: "Électrotechnique, option réseaux électriques",
-      university: "Université de Béjaïa",
-      country: "Algérie",
-      period: "2025 → 2026",
-      description: [
-        "Projets sur les réseaux électriques intelligents (Smart Grids).",
-        "Analyse et optimisation de systèmes de distribution électrique.",
-        "Simulation de systèmes d’électronique de puissance."
-      ],
-      tags: ["Électrotechnique de puissance avancée", "Smart Grids", "Réseaux de transport et de distribution","Maintenance industrielle"],
-      logo: logoUniv,
-    },
+   {
+  title: "Master 2",
+  specialization: "Électrotechnique, option Réseaux électriques",
+  university: "Université de Béjaïa",
+  country: "Algérie",
+  period: "2025 → 2026",
+  description: [
+    "Étude des réseaux électriques intelligents (Smart Grids).",
+    "Analyse de la stabilité et de la dynamique des réseaux électriques.",
+    "Conduite, exploitation et optimisation des réseaux de transport et de distribution."
+  ],
+  tags: [
+    "Smart Grids",
+    "Conduite des réseaux électriques",
+    "Stabilité et dynamique des réseaux électriques",
+    "Réseaux de transport et de distribution",
+    "Maintenance industrielle",
+    "Techniques d'intelligence artificielle"
+  ],
+  logo: logoUniv,
+},
     {
       title: "Master 1",
       specialization: "Electrotechnique",
@@ -91,13 +98,18 @@ export default function Education() {
           align-items: center;
         }
         .section-title {
-          font-size: 2.8rem;
-          color: #1e90ff;
-          text-shadow: 0 0 14px #1e90ff;
-          margin-bottom: 50px;
-          display: flex;
-          align-items: center;
-        }
+  font-size: 2.8rem;
+  color: #1e90ff;
+  text-shadow: 0 0 14px #1e90ff;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0 15px;
+}
         .icon { margin-right: 10px; }
 
         .timeline-container {
@@ -170,7 +182,7 @@ export default function Education() {
         /* Mobile */
         @media (max-width: 600px) {
           .section-title { font-size: 2.4rem; }
-          .icon { font-size: 5rem; margin-right: 10px; }
+          .icon { font-size: 3rem; margin-right: 10px; }
           .logo-inside { width: 50px; height: 50px; margin-right: 15px; }
           .description { padding: 15px 20px; }
           .description h3 { font-size: 1.3rem; }

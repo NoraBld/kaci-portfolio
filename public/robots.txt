@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kaci-belloul-portfolio.vercel.app/sitemap.xml
