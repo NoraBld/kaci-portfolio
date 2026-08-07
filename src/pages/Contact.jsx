@@ -54,73 +54,130 @@ export default function Contact() {
       </div>
 
       <style>{`
-        body, html { overflow: hidden; height: 100%; }
+  body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
 
-        .contact-page {
-          min-height: 100vh;
-          background: #001f3f;
-          color: #F5F5F5;
-          padding-top: 70px;
-          font-family: 'Segoe UI', sans-serif;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
+  .contact-page {
+    min-height: 100vh;
+    background: #001f3f;
+    color: #F5F5F5;
+    padding: 90px 20px 40px;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
 
-        .contact-title {
-          font-size: 2.5rem;
-          color: #1e90ff;
-          text-shadow: 0 0 12px #1e90ff;
-          margin-bottom: 50px;
-        }
+  .contact-title {
+    font-size: 2.5rem;
+    color: #1e90ff;
+    text-shadow: 0 0 12px #1e90ff;
+    margin-bottom: 40px;
+    text-align: center;
+  }
 
-        .contact-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 30px;
-          width: 80%;
-          max-width: 1000px;
-        }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1000px;
+  }
 
-        .contact-box {
-          background: rgba(30,144,255,0.1);
-          padding: 25px 20px;
-          border-radius: 18px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          gap: 12px;
-          font-size: 1.1rem;
-          color: #F5F5F5;
-          box-shadow: 0 8px 30px rgba(30,144,255,0.3);
-          transition: transform 0.3s, box-shadow 0.3s;
-        }
+  .contact-box {
+    background: rgba(30, 144, 255, 0.1);
+    padding: 25px 20px;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 1.1rem;
+    color: #F5F5F5;
+    box-shadow: 0 8px 30px rgba(30, 144, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    word-break: break-word;
+  }
 
-        .contact-box:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 12px 35px rgba(30,144,255,0.5);
-        }
+  .contact-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(30, 144, 255, 0.5);
+  }
 
-        .icon { color: #1e90ff; }
+  .icon {
+    color: #1e90ff;
+    font-size: 28px;
+  }
 
-        .social-box a {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          color: #F5F5F5;
-          text-decoration: none;
-          gap: 8px;
-          transition: color 0.3s;
-        }
+  .social-box a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #F5F5F5;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
 
-        .social-box a:hover { color: #1e90ff; }
+  .social-box a:hover {
+    color: #1e90ff;
+  }
 
-        /* Responsive */
-        @media (max-width: 900px) {
-          .contact-grid { grid-template-columns: 1fr; gap: 20px; width: 90%; }
-        }
-      `}</style>
+  .contact-box span {
+    word-break: break-word;
+    text-align: center;
+  }
+
+  /* Tablette */
+  @media (max-width: 768px) {
+    .contact-title {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    .contact-grid {
+      gap: 20px;
+    }
+
+    .contact-box {
+      padding: 20px;
+      font-size: 1rem;
+    }
+
+    .icon,
+    .social-box svg {
+      font-size: 24px;
+    }
+  }
+
+  /* Téléphone */
+  @media (max-width: 480px) {
+    .contact-page {
+      padding: 80px 15px 30px;
+    }
+
+    .contact-title {
+      font-size: 1.7rem;
+    }
+
+    .contact-box {
+      padding: 18px;
+      font-size: 0.95rem;
+    }
+
+    .icon,
+    .social-box svg {
+      font-size: 22px;
+    }
+  }
+`}</style>
+
     </div>
   );
 }
